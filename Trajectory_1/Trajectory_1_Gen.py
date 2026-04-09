@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+# Generates Trajectories using NumPy arrays #
+# No. of keys for T1 = 11
 # Starting Position
 key_0 = np.array([0, -0.960, 1.160, 0, -0.300, 0, 0.057, -0.057])
 
