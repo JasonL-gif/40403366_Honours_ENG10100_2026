@@ -7,7 +7,7 @@ from Trajectory_1_Gen import keyframe
 import matplotlib.pyplot as plt
 import pandas as pd
 
-m = mujoco.MjModel.from_xml_path("../40403366_Honours_Ver4/trossen_vx300s/scene.xml")
+m = mujoco.MjModel.from_xml_path("../40403366_Honours_ENG10100_2026-main/trossen_vx300s/scene.xml")
 d = mujoco.MjData(m)
 
 sim_time = 20
