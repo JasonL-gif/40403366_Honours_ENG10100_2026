@@ -1,17 +1,17 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data1 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_box.csv")
+data1 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_box.csv")  # Extracts all data pertaining to the box from .csv file
 data2 = pd.read_csv("Results/csv_bin/csv_2/script_2_data_box.csv")
 data3 = pd.read_csv("Results/csv_bin/csv_3/script_3_data_box.csv")
 
 ## BOX TRAJECTORY AND PE; TRAJECTORY 1 ##
-plt.subplot(2, 2, 1)
-plt.title("x_box-t; Trajectory 1")
+plt.subplot(2, 2, 1)  # Produces several plots in one page
+plt.title("x_box-t; Trajectory 1")  # Title    
 plt.grid()
 plt.axhline(0, 0, 1, color = (0, 0, 0, 1))      # Produces a horizontal line at q = 0.
-plt.plot(data1["Time"], data1["x_Position"])
-plt.xlabel("Time (s)")
+plt.plot(data1["Time"], data1["x_Position"])  # Plots time in the x-axis, and x position in the y - axis
+plt.xlabel("Time (s)")  # Labels
 plt.ylabel("x position (m)")
 #---------#
 plt.subplot(2, 2, 2)
