@@ -35,6 +35,10 @@ For this project the "-pip" method of installation was used for the following di
     - Matplotlib: For the production and viewing of plots
     - MuJoCo: For simulation 
 
+## COMMENTS ##
+Comments included within the code are found for Trajectory 1, and are additionally true for the other trajectories.
+Comments are also included for E-P-Tau_Results, Q-V-A_Results_1, and Traj_Box_Results; with their premise being the same for all other results scripts
+
 ## AUTHOR ##
 
 Jason H. Lynass
