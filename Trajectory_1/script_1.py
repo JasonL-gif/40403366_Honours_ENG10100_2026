@@ -2,8 +2,8 @@ import numpy as np
 import mujoco as mj
 import mujoco.viewer
 import time
-from Interpolation_1 import t_smooth, t_interp, q1_linear, q2_linear, q3_linear, q4_linear, q5_linear, q6_linear, gripper1_linear, gripper2_linear
-from Trajectory_1_Gen import keyframe
+from Interpolation_1 import t_smooth, t_interp, q1_linear, q2_linear, q3_linear, q4_linear, q5_linear, q6_linear, gripper1_linear, gripper2_linear        # Import interpolations
+from Trajectory_1_Gen import keyframe        # Import keyframe from Trajectory_Gen
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -12,7 +12,7 @@ d = mujoco.MjData(m)        # Adds data from the URDF file
 
 sim_time = 20        # Total simulation time
 dt = m.opt.timestep        # Timestep = 0.02s
-total_energy = 0        
+total_energy = 0        # Sets energy consumption to zero
 time_elapsed = []        # Empty lists to be appended as the simulation progresses
 torque_traj = []
 pow_traj = []
@@ -115,14 +115,14 @@ if __name__ == "__main__":
         print("---Max Power---")
         print(f"{max_power:.3f} W")        # Prints the results for energy consumption, max potential energy of the box, final torque of the trajectory, and the torque peak
 
-        # csv Data
-        data_1 = {"Time": time_elapsed,        # Dictionaries which contain key:value pairs which allocate physical properties to the appropriate trajectory lists
-                  "Energy": energy_traj,
-                  "Power": pow_traj,
+        # csv Data        # Dictionaries which contain key:value pairs which allocate physical properties to the appropriate trajectory lists
+        data_1 = {"Time": time_elapsed,         # Appended time list added to data     
+                  "Energy": energy_traj,        # Appended energy consumption list added to data
+                  "Power": pow_traj,            # Appended power list added to data    
                   }
         
         data_2 = {"Time": time_elapsed,
-                  "Torque_1": tau_1_traj,
+                  "Torque_1": tau_1_traj,        # Appended torque lists added to data
                   "Torque_2": tau_2_traj,
                   "Torque_3": tau_3_traj,
                   "Torque_4": tau_4_traj,
@@ -131,13 +131,13 @@ if __name__ == "__main__":
                   }
         
         data_3 = {"Time": time_elapsed,
-                  "x_Position": x_traj,
-                  "y_Position": y_traj,
-                  "z_Position": z_traj,
-                  "PE_Box": PE_box_traj}
+                  "x_Position": x_traj,        # x-positional path added to data
+                  "y_Position": y_traj,        # y-positional path added to data
+                  "z_Position": z_traj,        # z-positional path added to data
+                  "PE_Box": PE_box_traj}        # Potential energy of box added to data
         
         data_4 = {"Time": t_interp,
-                  "Q_Position_1": q1_linear(t_interp),
+                  "Q_Position_1": q1_linear(t_interp),        # All joint positions added to data 
                   "Q_Position_2": q2_linear(t_interp),
                   "Q_Position_3": q3_linear(t_interp),
                   "Q_Position_4": q4_linear(t_interp),
@@ -148,7 +148,7 @@ if __name__ == "__main__":
                   }
         
         data_5 = {"Time": time_elapsed,
-                  "Velocity_1": v1_traj,
+                  "Velocity_1": v1_traj,        # All joint velocities added to data 
                   "Velocity_2": v2_traj,
                   "Velocity_3": v3_traj,
                   "Velocity_4": v4_traj,
@@ -157,7 +157,7 @@ if __name__ == "__main__":
                   }
         
         data_6 = {"Time": time_elapsed,        
-                  "Acceleration_1": q1_acc_traj,
+                  "Acceleration_1": q1_acc_traj,        # All joint accelerations added to data
                   "Acceleration_2": q2_acc_traj,
                   "Acceleration_3": q3_acc_traj,
                   "Acceleration_4": q4_acc_traj,
