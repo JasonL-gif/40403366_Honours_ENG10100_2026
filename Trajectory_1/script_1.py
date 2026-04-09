@@ -7,13 +7,13 @@ from Trajectory_1_Gen import keyframe
 import matplotlib.pyplot as plt
 import pandas as pd
 
-m = mujoco.MjModel.from_xml_path("../40403366_Honours_ENG10100_2026-main/trossen_vx300s/scene.xml")
-d = mujoco.MjData(m)
+m = mujoco.MjModel.from_xml_path("../40403366_Honours_ENG10100_2026-main/trossen_vx300s/scene.xml")        # Adds URDF file as the model for simulation
+d = mujoco.MjData(m)        # Adds data from the URDF file
 
-sim_time = 20
-dt = m.opt.timestep
-total_energy = 0
-time_elapsed = []
+sim_time = 20        # Total simulation time
+dt = m.opt.timestep        # Timestep = 0.02s
+total_energy = 0        
+time_elapsed = []        # Empty lists to be appended as the simulation progresses
 torque_traj = []
 pow_traj = []
 energy_traj = []
@@ -43,7 +43,7 @@ tau_4_traj = []
 tau_5_traj = []
 tau_6_traj = []
 
-mujoco.mj_resetDataKeyframe(m, d, 0)
+mujoco.mj_resetDataKeyframe(m, d, 0)        # Sets the beginning pose of the simulation as the home key
 
 with mujoco.viewer.launch_passive(m, d) as viewer:              # With the MuJoCo software launched as required, with the model, data. (Launched as viewer [i.e. mujoco.viewer])
         while viewer.is_running() and d.time < sim_time:        # While the simulation is running, and the time of the simulation is less than the max. time of the simulation
@@ -104,7 +104,7 @@ with mujoco.viewer.launch_passive(m, d) as viewer:              # With the MuJoC
                 viewer.sync()   # Syncs the simulation to the simulation viewer, so that each timestep can be viewed in sequence. Allows for the animation of the trajectory.
 
 if __name__ == "__main__":
-        max_PE = max(PE_box_traj)
+        max_PE = max(PE_box_traj)        
         max_power = max(pow_traj)
         print("--- Energy Consumption ---")
         print(f"{total_energy:.3f} J")
@@ -113,10 +113,10 @@ if __name__ == "__main__":
         print("--- Final Torque ---")
         print(f"{torque_traj[-1]:.3f} Nm")
         print("---Max Power---")
-        print(f"{max_power:.3f} W")
+        print(f"{max_power:.3f} W")        # Prints the results for energy consumption, max potential energy of the box, final torque of the trajectory, and the torque peak
 
         # csv Data
-        data_1 = {"Time": time_elapsed,
+        data_1 = {"Time": time_elapsed,        # Dictionaries which contain key:value pairs which allocate physical properties to the appropriate trajectory lists
                   "Energy": energy_traj,
                   "Power": pow_traj,
                   }
@@ -156,7 +156,7 @@ if __name__ == "__main__":
                   "Velocity_6": v6_traj,
                   }
         
-        data_6 = {"Time": time_elapsed,
+        data_6 = {"Time": time_elapsed,        
                   "Acceleration_1": q1_acc_traj,
                   "Acceleration_2": q2_acc_traj,
                   "Acceleration_3": q3_acc_traj,
@@ -165,14 +165,14 @@ if __name__ == "__main__":
                   "Acceleration_6": q6_acc_traj
                   }
 
-        dataframe1 = pd.DataFrame(data_1)
+        dataframe1 = pd.DataFrame(data_1)        # Sets each dictionary as a dataframe to be extracted
         dataframe2 = pd.DataFrame(data_2)
         dataframe3 = pd.DataFrame(data_3)
         dataframe4 = pd.DataFrame(data_4)
         dataframe5 = pd.DataFrame(data_5)
         dataframe6 = pd.DataFrame(data_6)
 
-        dataframe1.to_csv("Results/csv_bin/csv_1/script_1_data_energy_power.csv")
+        dataframe1.to_csv("Results/csv_bin/csv_1/script_1_data_energy_power.csv")        # Writes the dataframes into a .csv file which is then transported to the results folder
         dataframe2.to_csv("Results/csv_bin/csv_1/script_1_data_torque.csv")
         dataframe3.to_csv("Results/csv_bin/csv_1/script_1_data_box.csv")
         dataframe4.to_csv("Results/csv_bin/csv_1/script_1_data_position.csv")
