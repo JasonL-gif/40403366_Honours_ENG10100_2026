@@ -36,7 +36,7 @@ For this project the "-pip" method of installation was used for the following di
     - MuJoCo: For simulation 
 
 ## INSTRUCTIONS ##
-1. Install all directories listed in ~REQUIRED INSTALLMENTS~
+1. Install all directories listed in *REQUIRED INSTALLMENTS*
 2. Run all scripts found in the folders Trajectory 1, Trajectory 2, Trajectory 3, and Trajectory 4 to produce .csv data
 3. View plots and data found within the Results folder for Traqjectories 1-3, and the Final_Results folder for Trajectory 4
 
