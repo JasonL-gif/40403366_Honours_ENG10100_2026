@@ -9,7 +9,7 @@ data4 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_torque.csv")  # Extract
 data5 = pd.read_csv("Results/csv_bin/csv_2/script_2_data_torque.csv")
 data6 = pd.read_csv("Results/csv_bin/csv_3/script_3_data_torque.csv")
 
-## ENERGY ##
+## ENERGY PLOTS ##
 plt.subplot(1, 3, 1)  # Produces page with several plots
 plt.title("E-t; Trajectory 1")         # Title of plot.
 plt.grid() 
@@ -38,7 +38,7 @@ plt.ylabel("Energy Consumption/cycle (J)")
 plt.ylim(0, 80)
 plt.show()
 
-## POWER ##
+## POWER PLOTS ##
 plt.subplot(1, 3, 1)
 plt.title("P-t; Trajectory 1")         # Title of plot.
 plt.grid() 
@@ -67,7 +67,7 @@ plt.ylabel("Power (W)")
 plt.ylim(0, 14)
 plt.show()
 
-## TORQUE ##
+## TORQUE PLOTS ##
 plt.subplot(2, 3, 1)
 plt.title("Tau_1-t; Traj 1")         # Title of plot.
 plt.grid() 
