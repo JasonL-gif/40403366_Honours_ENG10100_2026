@@ -114,9 +114,7 @@ if __name__ == "__main__":
         print(f"{torque_traj[-1]:.3f} Nm")
         print("---Max Power---")
         print(f"{max_power:.3f} W")
-        print("---Total Power---")
-        print(f"{np.sum(pow_traj):.3f} W")
-
+        
         # csv Data
         data_1 = {"Time": time_elapsed,
                   "Energy": energy_traj,
