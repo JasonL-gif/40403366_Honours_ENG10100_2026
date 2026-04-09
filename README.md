@@ -6,14 +6,21 @@ This repository makes use of Python and the open-source engine MuJoCo for the si
 The files and folders in this repository take the following forms:
 
 TRAJECTORY:
+
     - Trajectory_X_Gen.py : For the production of trajectory keys and the synthesis of keyframes
+    
     - Interpolation_X.py : For the transposing of keyframes and the interpolation of q positions to form trajectory paths, where the interpolation methods are either Linear interpolation or Piecewise Cubic Hermite Interpolating Polynomial (PCHIP) interpolation
+    
     - script_X.py : The main simulation script, which imports the data from the aforementioned scripts and uses MuJoCo to simulate them. The results of the scripts are then exported as .csv files for plotting
 
 RESULTS:
+
     - csv_bin : Where the results data is exported to
+    
     - E-P-Tau_Results: The matplotlib plots for Energy, Power and Torque
+    
     - Q-V-A_Results: The matplotlib plots for joint position, joint velocity and joint acceleration
+    
     - Traj_Box_Results: The matplotlib plots for variables pertaining to the movement of the payload, namely potential energy and cartesian position
 
 For conciseness, the results for the optimised trajectory are contained in their own folder: "Final_Results".
@@ -29,6 +36,9 @@ For this project the "-pip" method of installation was used for the following di
     - MuJoCo: For simulation 
 
 ## AUTHOR ##
+
 Jason H. Lynass
+
 School of Computing, Engineering and the Built Environment
+
 Edinburgh Napier University
