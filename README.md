@@ -1,5 +1,5 @@
 ## PURPOSE OF THE REPOSITORY ##
-The files attached herein directly pertain to a BEng Honour's Project detailing the optimisation of a 6 DOF ViperX 300 articulated robotic arm for energy consumption.
+The files attached directly pertain to a BEng Honour's Project detailing the optimisation of a 6 DOF ViperX 300 articulated robotic arm for energy consumption.
 This repository makes use of Python and the open-source engine MuJoCo for the simulations and data analysis of the robotic arm and its trajectories.
 
 ## CONTENTS ##
