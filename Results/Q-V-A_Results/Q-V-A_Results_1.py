@@ -1,19 +1,19 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data1 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_position.csv")
-data2 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_velocity.csv")
-data3 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_acceleration.csv")
+data1 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_position.csv")  # Extracts data for position from .csv file
+data2 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_velocity.csv") # Extracts data for velocity from .csv file
+data3 = pd.read_csv("Results/csv_bin/csv_1/script_1_data_acceleration.csv") # Extracts data for acceleration from .csv file
 
 ## Q POSITION, VELOCITY, ACCELERATION [Joint 1 - 3] ##
-plt.subplot(3, 3, 1)
-plt.subplots_adjust(hspace = 0.4)
+plt.subplot(3, 3, 1)  # Produces several plots in one page
+plt.subplots_adjust(hspace = 0.4)  # Adjusts the spacing between each plot
 plt.title("q1-t; Trajectory 1")         # Title of plot.
 plt.grid() 
-plt.axhline(0, 0, 1, color = (0, 0, 0, 1))      # Produces a horizontal line at q = 0.
-plt.axvline(0, 0, 1, color = (0, 0, 0, 1))
-plt.plot(data1["Time"], data1["Q_Position_1"], marker = "x")
-plt.xlabel("Time (s)")
+plt.axhline(0, 0, 1, color = (0, 0, 0, 1))      # Produces a horizontal line at y = 0.
+plt.axvline(0, 0, 1, color = (0, 0, 0, 1))  # Produces a vertical line at x = 0
+plt.plot(data1["Time"], data1["Q_Position_1"], marker = "x")  # Plots data with markers for each value  
+plt.xlabel("Time (s)")  # Plot labels
 plt.ylabel("Joint Position (rad)")
 #---------#
 plt.subplot(3, 3, 2)
