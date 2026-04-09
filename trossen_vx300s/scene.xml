@@ -24,5 +24,9 @@
       <geom type="box" size="0.025 0.025 0.025" rgba="1 0 0 1" mass="0.25" friction="1 0.005 0.0001" condim = "4"/>
     </body>
   </worldbody>
+
+  <keyframe>
+    <key name="home" qpos="0 -0.96 1.16 0 -0.3 0 0.057 -0.057 0 0.5 0 0 0 0" ctrl="0 -0.96 1.16 0 -0.3 0 0.057"/>
+  </keyframe>
   
 </mujoco>
