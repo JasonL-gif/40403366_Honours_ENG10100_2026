@@ -60,7 +60,6 @@ with mujoco.viewer.launch_passive(m, d) as viewer:              # With the MuJoC
                 d.ctrl[6] = gripper1_linear(d.time)
                 mujoco.mj_step(m, d)            # Establishes a time-step within the situation, essentially telling the simulation to begin with the aforementioned conditions
                 time_elapsed.append(d.time)     # Appends the time elapsed to an empty list
-                print(d.time)
         # Trajectory Path
                 pos = d.xpos[11]                # Position of the payload (box)
                 x_pos = pos[0]                  # x-Position of the payload
