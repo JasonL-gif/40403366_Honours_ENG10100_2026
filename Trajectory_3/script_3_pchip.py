@@ -60,7 +60,6 @@ with mujoco.viewer.launch_passive(m, d) as viewer:
                 d.ctrl[6] = gripper1_pchip(d.time)
                 mujoco.mj_step(m, d)
                 time_elapsed.append(d.time)
-                print(d.time)
         # Trajectory Path
                 pos = d.xpos[11]                
                 x_pos = pos[0]                  
